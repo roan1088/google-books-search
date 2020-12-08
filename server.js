@@ -28,6 +28,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/google-books", 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+// API routes
+app.use("/api", require("./routes/api"));
 
 // Starting the server
 app.listen(PORT, function() {
