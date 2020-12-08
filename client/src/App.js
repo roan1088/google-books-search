@@ -1,14 +1,19 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import './App.css';
 import Header from "./components/Header";
-import Banner from "../Banner";
+import Banner from "./components/Banner";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Header />
       <Banner />
-    </div>
+      <Route exact path={["/", "/search"]} component={Search} />
+      <Route exact path="/saved" component={Saved} />
+    </Router>
   );
 }
 
