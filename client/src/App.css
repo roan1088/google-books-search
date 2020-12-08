@@ -5,3 +5,10 @@
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+main {
+  border: 2px black solid;
+  width: 96%;
+  margin: 20px auto;
+  padding: 10px;
+}
