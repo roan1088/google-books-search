@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchForm from "../../components/SearchForm";
 import SearchResult from "../../components/SearchResult";
+import API from "../../utils/API";
 
 function Search() {
   useEffect(() => {
@@ -8,16 +9,20 @@ function Search() {
   }, []);
 
   const [book, setBook] = useState("");
+  const [bookResult, setBookResult] = useState({totalItems: -1});
 
   const searchBook = (e) => {
     e.preventDefault();
-    console.log(book);
+    API.getGoogleBooks(book).then(({ data }) => {
+      // console.log(data);
+      setBookResult(data);
+    });
   }
 
   return (
     <main>
       <SearchForm searchBook={searchBook} setBook={setBook} />
-      <SearchResult />
+      {bookResult.totalItems === -1 ? "" : bookResult.totalItems > 0 ? <SearchResult books={bookResult.items} /> : <p>No books found!</p>}
     </main>
   );
 }
