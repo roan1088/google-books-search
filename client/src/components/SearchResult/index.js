@@ -1,9 +1,11 @@
 import React from "react";
+import Book from "../Book";
 
-function SearchResult() {
+function SearchResult({ books }) {
   return (
     <div>
-      Search results
+      <p>Search results</p>
+      {books.map(({ volumeInfo }) => <Book {...volumeInfo} image={volumeInfo.imageLinks.thumbnail} link={volumeInfo.infoLink} />)}
     </div>
   );
 }
