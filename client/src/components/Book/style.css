@@ -1,0 +1,24 @@
+.book-info {
+  border: 2px black solid;
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.book-buttons {
+  float: right;
+}
+
+.book-buttons button {
+  margin-left: 5px;
+}
+
+.book-info img {
+  float: left;
+  margin-right: 10px;
+}
+
+.book-info::after {
+  content: "";
+  clear: both;
+  display: table;
+}
