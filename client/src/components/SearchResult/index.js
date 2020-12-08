@@ -5,7 +5,7 @@ function SearchResult({ books }) {
   return (
     <div>
       <p>Search results</p>
-      {books.map(({ volumeInfo }) => <Book {...volumeInfo} image={volumeInfo.imageLinks.thumbnail} link={volumeInfo.infoLink} />)}
+      {books.map(({ volumeInfo }) => <Book {...volumeInfo} image={volumeInfo.imageLinks.thumbnail} link={volumeInfo.infoLink} key={volumeInfo.infoLink} />)}
     </div>
   );
 }
