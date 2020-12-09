@@ -6,5 +6,8 @@ export default {
   },
   postBook: function(book) {
     return axios.post("api/books", book);
+  },
+  getAllBooks: function() {
+    return axios.get("api/books");
   }
 };
