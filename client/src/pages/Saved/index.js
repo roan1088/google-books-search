@@ -14,11 +14,11 @@ function Saved() {
     API.getAllBooks().then(({ data }) => {
       // console.log(data);
       setBooks(data);
-    });
+    }).catch(err => console.log(err));
   }
 
   const deleteBook = (id) => {
-    API.deleteBook(id).then(res => loadAllBooks());
+    API.deleteBook(id).then(res => loadAllBooks()).catch(err => console.log(err));
   }
 
   return (

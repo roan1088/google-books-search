@@ -10,7 +10,7 @@ function Book({ title, authors, image, description, link, _id, deleteBook }) {
     const book = {
       title, authors, image, description, link
     }
-    API.postBook(book).then(res => console.log(res));
+    API.postBook(book).then(res => console.log(res)).catch(err => console.log(err));
   }
 
   return (

@@ -16,7 +16,7 @@ function Search() {
     API.getGoogleBooks(book).then(({ data }) => {
       // console.log(data);
       setBookResult(data);
-    });
+    }).catch(err => console.log(err));
   }
 
   return (
