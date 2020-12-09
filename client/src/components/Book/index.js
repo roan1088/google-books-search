@@ -3,6 +3,9 @@ import "./style.css";
 import API from "../../utils/API";
 
 function Book({ title, authors, image, description, link }) {
+  if (!authors) {
+    authors = ["No authors found"];
+  }
   const saveBook = () => {
     const book = {
       title, authors, image, description, link
