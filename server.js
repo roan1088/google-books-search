@@ -30,6 +30,10 @@ if (process.env.NODE_ENV === "production") {
 }
 // API routes
 app.use("/api", require("./routes/api"));
+// Any other routes, send the homepage
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // Starting the server
 app.listen(PORT, function() {
