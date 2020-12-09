@@ -22,3 +22,7 @@
   clear: both;
   display: table;
 }
+
+.saved {
+  background: lightgreen;
+}

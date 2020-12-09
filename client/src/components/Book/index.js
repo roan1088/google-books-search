@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import API from "../../utils/API";
 
@@ -6,11 +6,14 @@ function Book({ title, authors, image, description, link, _id, deleteBook }) {
   if (!authors) {
     authors = ["No authors found"];
   }
+
+  const [saveText, setSaveText] = useState("Save");
+
   const saveBook = () => {
     const book = {
       title, authors, image, description, link
     }
-    API.postBook(book).then(res => console.log(res)).catch(err => console.log(err));
+    API.postBook(book).then(res => setSaveText("Saved")).catch(err => console.log(err));
   }
 
   return (
@@ -19,7 +22,7 @@ function Book({ title, authors, image, description, link, _id, deleteBook }) {
         <button onClick={() => {
           window.open(link, "_blank");
         }}>View</button>
-        {_id ? <button onClick={() => deleteBook(_id)}>Delete</button> : <button onClick={saveBook}>Save</button>}
+        {_id ? <button onClick={() => deleteBook(_id)}>Delete</button> : <button className={saveText === "Saved" ? "saved" : ""} onClick={saveBook}>{saveText}</button>}
       </div>
       <h5>{title}</h5>
       <h6>Written By: {authors.join(", ")}</h6>
