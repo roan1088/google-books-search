@@ -6,7 +6,7 @@ function Saved() {
   useEffect(() => {
     document.title = "Saved Books";
     API.getAllBooks().then(({ data }) => {
-      console.log(data);
+      // console.log(data);
       setBooks(data);
     })    
   }, []);
