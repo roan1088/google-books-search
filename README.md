@@ -7,6 +7,8 @@ https://google-books-1088.herokuapp.com/
 ## Description
 An app that searches books using Google Books API, and saves books to a database. This is a full-stack MERN app which uses React for front-end, Node.js and express for back-end server and MongoDB for data storage.
 
+![Google Books Search](./images/google-books-search.png)
+
 ## Table of Contents
 - [Usage](#usage)
 - [Contributing](#contributing)
